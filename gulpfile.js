@@ -42,10 +42,11 @@ let bundleApp = () => {
 gulp.task('browser-sync', () => {
     
     browserSync.init({
-
+        port: 9000,
         server : {
-            baseDir: './'
+            baseDir: './',
         }
+        
     })
 })
 
