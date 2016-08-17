@@ -13,7 +13,7 @@ const sass       = require("gulp-sass")
 
 
 let bundler = browserify({
-    entries: 'assets/js/app.js',
+    entries: 'app/app.js',
     debug: true
 }) .transform(babelify, { presets: ['es2015', 'react'] })
 
@@ -52,10 +52,10 @@ gulp.task('browser-sync', () => {
 
 gulp.task("sass", () => {
 
-    return gulp.src("./assets/sass/main.sass")
+    return gulp.src("./sass/main.sass")
     .pipe(sass({
         outputStyle: 'compressed',
-        includePaths: ['assets/sass/']
+        includePaths: ['sass/']
     }).on('error', sass.logError))
     .pipe(gulp.dest("./public/css"))
     .pipe(reload({stream: true}))
@@ -68,8 +68,8 @@ gulp.task('scripts', () => bundleApp() )
 // Watch task 
 gulp.task('watch', () => {
 
-    gulp.watch(['assets/js/**/*.js'], ['scripts'])
-    gulp.watch(['assets/sass/**/*.sass'], ['sass'])
+    gulp.watch(['app/**/*.js'], ['scripts'])
+    gulp.watch(['sass/**/*.sass'], ['sass'])
 
 })
 
