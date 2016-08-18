@@ -1,3 +1,36 @@
-<h1>Hello {{home.name}}</h1>
+<section class="home__top">
+    
+    <div class="wrapper">
+        
+        <span>Logo will sit here</span>
+        <h1 class="home__title">Find Me A Designer</h1>
+        <h2 class="home__strapline">Find designers and teams in your area.</h2>
 
-<button ng-click="home.alertName()">Click Me</button>
+    </div>
+
+</section>
+
+<section class="home__bottom">
+
+    <form class="home__find-designer" action="">
+        
+        <div class="form-group">
+            <h1>I want to find:</h1>
+            <input type="radio" name="designers" value="designers"> Designers<br>
+            <input type="radio" name="teams" value="teams"> Teams <br>
+        </div>
+
+        <div class="form-group">
+            <h3>I'm In :</h3>
+            <input type="text" name="location">
+        </div>
+
+        <div class="form-group">
+            <h3>Submit</h3>
+            <button type="button">Find Me A Designer !</button>
+        </div>
+    
+    </form>
+
+
+</section>
