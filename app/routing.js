@@ -12,41 +12,41 @@ const routing = ($stateProvider, $urlRouterProvider) => {
             controller: 'HomeController',
             controllerAs: 'home'
         })
-
+        
         .state('teams', {
             
-            url: '/results/teams',
-            templateUrl: 'app/templates/results.html',
-            controller: 'ResultsController',
-            controllerAs: 'results'
-
-        })
+            url: '/teams',
+            templateUrl: '/app/templates/teams.html',
+            controller: 'TeamController',
+            controllerAs: 'team'
         
+        })
+
         .state('designers', {
             
-            url: '/results/designers',
-            templateUrl: 'app/templates/results.html',
-            controlelr: 'ResultsController',
-            controllerAs: 'results'
+
+            url: '/designers', 
+            templateUrl: '/app/templates/designers.html',
+            controller: 'DesignerController', 
+            controllerAs: 'designer'
         
         })
 
-        .state('team detail', {
+        .state('team_detail', {
             
-            url: '/teams/:id/',
-            templateUrl: 'app/template/details.html',
-            controller: 'DetailsController',
-            controllerAs: 'details'
-
+            url: '/teams/:id',
+            templateUrl: '/app/templates/team.html',
+            controller: 'TeamController',
+            controllerAs: 'team'
+        
         })
-    
-        .state('designers detail', {
+        
+        .state('designer_detail', {
             
-            url: '/designers/:id/',
-            templateUrl: 'app/template/details.html',
-            controller: 'DetailsController',
-            controllerAs: 'details'
-
+            url: '/designers/:id',
+            templateUrl: '/app/templates/designer.html',
+            controller: 'DesignerController',
+            controllerAs: 'designer'
         })
 
 }
