@@ -6,13 +6,16 @@ export default class HomeController {
     }
 
     submitForm() {
-
-        let response = {
-            searchType: this.searchType,
-            searchLocation: this.location
+        
+        let formData = {
+            
+            searchQuery : this.searchQuery,
+            radius : this.radius,
+            limit : this.limit
         }
+        
+        console.log(`You fancy ${formData.searchQuery} and want us to return ${formData.limit} venues in a ${formData.radius} metres radius`)
 
-        console.log(`You are looking for ${response.searchType} and you're based in ${response.searchLocation}`)
     }
 
 }
