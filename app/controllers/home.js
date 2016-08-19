@@ -4,10 +4,17 @@ export default class HomeController {
     constructor() {
         this.name = "Neymar Jr"
     }
-    
-    alertName() {
-        alert(this.name) 
+
+    submitForm() {
+
+        let response = {
+            searchType: this.searchType,
+            searchLocation: this.location
+        }
+
+        console.log(`You are looking for ${response.searchType} and you're based in ${response.searchLocation}`)
     }
 
 }
+
 
