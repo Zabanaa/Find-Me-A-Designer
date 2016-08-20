@@ -1,23 +1,28 @@
 export default class HomeController {
     
     // Pass any dependencies to the constructor
-    constructor() {
+    constructor(VenuesService) {
         this.name = "Neymar Jr"
+        this.venues = VenuesService
     }
-
+    
     submitForm() {
         
         let formData = {
             
-            searchQuery : this.searchQuery,
+            query : this.searchQuery,
             radius : this.radius,
-            limit : this.limit
+            limit : this.limit,
+            location: this.location,
+            price: this.price
         }
         
-        console.log(`You fancy ${formData.searchQuery} and want us to return ${formData.limit} venues in a ${formData.radius} metres radius`)
+        this.venues.getVenues(formData)
+            .then( (response) => console.log(response.data), (error) => console.log(error) )
 
     }
 
 }
 
+HomeController.$inject = ['VenuesService']
 
