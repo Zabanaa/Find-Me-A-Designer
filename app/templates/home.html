@@ -4,8 +4,8 @@
         
         <span>Logo will sit here</span>
         <h1 class="home__title">Lunch Wrap</h1>
-        <h2 class="home__strapline">Get venue recommendations and don't waste your time on
-        yelp!</h2>
+        <p class="home__strapline">Get venue recommendations and don't waste your time on
+        yelp!</p>
 
     </div>
 
@@ -15,45 +15,40 @@
 
     <form class="home__find-designer" ng-submit="home.submitForm()">
        
-        <div class="form-group">
-            
-            <h3>I'm currently in ...</h3>
-            <input type="text" ng-model="home.location" placeholder="London, UK - Paris,
+        <div class="form-group group-location">
+            <label for="location">I'm currently in ...</label>
+            <input name="location" type="text" ng-model="home.location" placeholder="London, UK - Paris,
             France ...">
-        </div>
-        
-        <div class="form-group">
-            <h3>... And I fancy: </h3>
-            <input type="text" ng-model="home.searchQuery" placeholder="Pizza, French, Burgers
+
+            <label for="search_query">... And I fancy:</label>
+            <input type="text" name="search_query" ng-model="home.searchQuery" placeholder="Pizza, French, Burgers
             ...">
         </div>
         
-        <div class="form-group">
-            <span>Give me</span>
-            <input type="text" ng-model="home.limit">
-            <span>results, In a </span>
-            <input type="text" ng-model="home.radius">
+        <div class="form-group group-radius">
+            <label for="limit">Give me</label>
+            <input name="limit" type="text" ng-model="home.limit">
+
+            <label for="radius">results, In a </label>
+            <input type="text" name="radius" ng-model="home.radius">
+
             <span>metres radius</span>
         </div>
 
-        <div class="form-group">
+        <div class="form-group group-budget">
         
-            <h3>My budget is</h3>
+            <label>My budget is</label>
             
             <select ng-model="home.price">
-                <option value="1">Low</option>
+                <option value="1" selected="selected">Low</option>
                 <option value="2">Moderate</option>
                 <option value="3">Big</option>
                 <option value="4">My boss is paying</option>
             </select>
         
-        </div>
-
-
-        <div class="form-group">
             <button type="submit">I want to eat!</button>
         </div>
-    
+
     </form>
 
 </section>
