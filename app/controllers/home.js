@@ -1,9 +1,10 @@
 export default class HomeController {
     
     // Pass any dependencies to the constructor
-    constructor(VenuesService) {
+    constructor(VenuesService, $location) {
         this.name = "Neymar Jr"
         this.venues = VenuesService
+        this.$location = $location
     }
     
     submitForm() {
@@ -17,12 +18,18 @@ export default class HomeController {
             price: this.price
         }
         
-        this.venues.getVenues(formData)
-            .then( (response) => console.log(response.data), (error) => console.log(error) )
+        this.venues.fetchVenues(formData)
+            .then( 
+                (response) => {
+                    this.venues.setVenues(response.data)
+                    this.$location.path('/venues')
+                },
+                (error) => console.log(error) 
+            )
 
     }
 
 }
 
-HomeController.$inject = ['VenuesService']
+HomeController.$inject = ['VenuesService', '$location']
 
