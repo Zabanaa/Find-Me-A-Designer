@@ -17,7 +17,9 @@ export default class HomeController {
             location: this.location,
             price: this.price
         }
-        
+       
+        this.venues.setLocation(formData.location)
+
         this.venues.fetchVenues(formData)
             .then( 
                 (response) => {
