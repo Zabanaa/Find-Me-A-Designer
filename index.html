@@ -13,5 +13,18 @@
     </main>
 
     <script src="public/js/app.js"></script>
+    <script>
+    
+        const main = document.querySelector('main')
+        const path = window.location.hash
+        if (path === "#/venues") {
+            main.style.justifyContent = "initial"
+            main.style.position = 'fixed'
+            main.style.width = '100%'
+        }
+        
+        
+    
+    </script>
 </body>
 </html>
