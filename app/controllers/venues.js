@@ -1,12 +1,9 @@
 export default class VenuesController {
     
     constructor(VenuesService){
-        this.venues = VenuesService
-        this.data = VenuesService.getVenues()
-        console.log(this.data)
+        this.venues = VenuesService.getVenues()
+        this.searchLocation = VenuesService.searchLocation
     }
-
-     
 
 }
 
