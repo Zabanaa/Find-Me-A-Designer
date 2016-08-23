@@ -7,6 +7,7 @@ export default class VenuesService {
         this.clientSecret = '3RCSCB0GEVZX3CERI2DC4I1LU5G41ZPXFB2BUFPHWHVWBJRB'
         this.version = "20160820"
         this.venues = {}
+        this.searchLocation = null
     }
     
     fetchVenues(params){
@@ -19,6 +20,10 @@ export default class VenuesService {
 
     setVenues(data){
         this.venues = data.response.groups['0'].items
+    }
+
+    setLocation(newLocation) {
+        this.searchLocation = newLocation 
     }
 
 }
