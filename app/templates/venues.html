@@ -1,1 +1,11 @@
-<h1>Hello from venues page</h1>
+<header class="venues__top">
+    <h1 class="venues__title">Venues in {{ venues.searchLocation }}</h1>
+</header>
+
+<section class="venues__list">
+
+    <ul>
+        <li ng-repeat="venue in venues.venues">{{venue.venue.name}}</li>
+    </ul>
+
+</section>
