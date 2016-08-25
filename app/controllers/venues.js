@@ -6,6 +6,10 @@ export default class VenuesController {
         this.userSearchQuery = VenuesService.userSearchQuery
     }
 
+    showDetail(venue){
+        console.log(venue)
+    }
+
 }
 
 // DO THE NECESSARY INJECTIONS
