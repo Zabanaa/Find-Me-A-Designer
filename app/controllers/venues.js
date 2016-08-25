@@ -3,6 +3,7 @@ export default class VenuesController {
     constructor(VenuesService){
         this.venues = VenuesService.getVenues()
         this.searchLocation = VenuesService.searchLocation
+        this.userSearchQuery = VenuesService.userSearchQuery
     }
 
 }
