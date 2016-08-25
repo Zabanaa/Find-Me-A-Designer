@@ -19,6 +19,7 @@ export default class HomeController {
         }
        
         this.venues.setLocation(formData.location)
+        this.venues.setUserSearchQuery(formData.query)
 
         this.venues.fetchVenues(formData)
             .then( 
