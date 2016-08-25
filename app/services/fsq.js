@@ -8,6 +8,7 @@ export default class VenuesService {
         this.version = "20160820"
         this.venues = {}
         this.searchLocation = null
+        this.userSearchQuery = null
     }
     
     fetchVenues(params){
@@ -16,6 +17,10 @@ export default class VenuesService {
     
     getVenues(){
         return this.venues 
+    }
+
+    setUserSearchQuery(userQuery) {
+        this.userSearchQuery = userQuery    
     }
 
     setVenues(data){
