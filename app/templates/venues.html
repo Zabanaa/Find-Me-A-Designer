@@ -10,7 +10,7 @@
 <section class="venues__list">
 
     <ul>
-        <li ng-repeat="venue in venues.venues">{{venue.venue.name}}</li>
+        <li ng-repeat="venue in venues.venues"><span ng-click="venues.showDetail(venue)">{{venue.venue.name}}</span></li>
     </ul>
 
 </section>
