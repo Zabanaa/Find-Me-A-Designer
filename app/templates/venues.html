@@ -1,5 +1,10 @@
 <header class="venues__top">
-    <h1 class="venues__title">Venues in {{ venues.searchLocation }}</h1>
+    <h1 class="venues__title"> 
+        Results for 
+        <span>{{venues.userSearchQuery}}</span> 
+        in
+        <span>{{venues.searchLocation}}</span>
+    </h1>
 </header>
 
 <section class="venues__list">
