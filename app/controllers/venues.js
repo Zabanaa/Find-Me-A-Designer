@@ -1,10 +1,12 @@
 export default class VenuesController {
     
-    constructor(VenuesService){
+    constructor(VenuesService, MapsService){
         this.venues = VenuesService.getVenues()
+        this.mapsService = MapsService
         this.searchLocation = VenuesService.searchLocation
         this.userSearchQuery = VenuesService.userSearchQuery
         this.modalShown = false
+        this.mapElement = document.querySelector(".venue-map")
     }
 
     showDetail(venue){
@@ -30,6 +32,7 @@ export default class VenuesController {
         } 
 
         // Make call to the google maps api
+        this.mapsService.createMap(this.mapElement, this.venue.latLng)
 
     }
 
@@ -41,4 +44,4 @@ export default class VenuesController {
 }
 
 // DO THE NECESSARY INJECTIONS
-VenuesController.$inject = ['VenuesService']
+VenuesController.$inject = ['VenuesService', 'MapsService']
