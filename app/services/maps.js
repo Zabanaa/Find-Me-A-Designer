@@ -9,7 +9,7 @@ export default class MapsService {
         let mapEl = element
         let myLatLng = {lat: location.lat, lng: location.lng}
         let mapOptions = {
-            zoom: 12,
+            zoom: 17,
             center: myLatLng
             // Add other options here
         }
