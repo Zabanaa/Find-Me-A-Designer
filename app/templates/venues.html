@@ -7,10 +7,41 @@
     </h1>
 </header>
 
+
 <section class="venues__list">
 
     <ul>
-        <li ng-repeat="venue in venues.venues"><span ng-click="venues.showDetail(venue)">{{venue.venue.name}}</span></li>
+        <li ng-repeat="venue in venues.venues"><span ng-click="venues.openModal(venue)">{{venue.venue.name}}</span></li>
     </ul>
-
+    
 </section>
+
+<div class="venues__detail" ng-show="venues.modalShown">
+    
+    <div class="venue-wrapper">
+    
+        <div class="venue-info">
+           
+            <h4>{{venues.venue.name}}</h4>
+            <ul>
+                <li>Phone: {{venues.venue.phone}}</li>
+                <li>Twitter: {{venues.venue.twitter}}</li>
+                <li>Url: {{venues.venue.url}}</li>
+                <li>Address: {{venues.venue.address}}</li>
+                <li>Rating: {{venues.venue.rating}}</li>
+                <li>IsOpen: {{venues.venue.isOpen}}</li>
+                <li>Here Now: {{venues.venue.hereNow}}</li>
+                <li>Checkins: {{venues.venue.checkins}}</li>
+                <li>Tips: {{venues.venue.tips}}</li>
+            </ul>
+            <button ng-click="venues.closeModal()">close</button>
+        </div>
+
+        <div class="venue-map">
+            map goes here 
+        </div>
+
+        
+        
+    </div>
+</div>
