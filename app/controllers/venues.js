@@ -19,7 +19,7 @@ export default class VenuesController {
             address: modalVenue.location.formattedAddress.join(),
             rating: modalVenue.rating,
             ratingColor: modalVenue.ratingColor,
-            isOpen: modalVenue.hours.isOpen,
+            isOpen: modalVenue.hours.isOpen ? 'Open' : 'Closed',
             hereNow: modalVenue.hereNow.count,
             checkins: modalVenue.stats.checkinsCount,
             tips: modalVenue.stats.tipCount,
