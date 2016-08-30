@@ -7,7 +7,6 @@
     </h1>
 </header>
 
-
 <section class="venues__list">
 
     <ul>
@@ -16,31 +15,28 @@
     
 </section>
 
-<div class="venues__detail" ng-show="venues.modalShown">
+<div class="venues__modal" ng-show="venues.modalShown">
     
-    <div class="venue-wrapper">
-    
-        <div class="venue-info">
-           
-            <h4>{{venues.venue.name}}</h4>
-            <ul>
-                <li>Phone: {{venues.venue.phone}}</li>
-                <li>Twitter: {{venues.venue.twitter}}</li>
-                <li>Url: {{venues.venue.url}}</li>
-                <li>Address: {{venues.venue.address}}</li>
-                <li>Rating: {{venues.venue.rating}}</li>
-                <li>IsOpen: {{venues.venue.isOpen}}</li>
-                <li>Here Now: {{venues.venue.hereNow}}</li>
-                <li>Checkins: {{venues.venue.checkins}}</li>
-                <li>Tips: {{venues.venue.tips}}</li>
-            </ul>
-            <button ng-click="venues.closeModal()">close</button>
-        </div>
-
-        <div class="venue-map">
-        </div>
-
+    <div class="venue-detail">
         
+
+        <h3 class="venue-name">{{venues.venue.name}}</h3>
+
+        <ul class="venue-info">
+            <li>Phone: {{venues.venue.phone}}</li>
+            <li>Twitter: {{venues.venue.twitter}}</li>
+            <li>Rating: {{venues.venue.rating}}</li>
+            <li>IsOpen: {{venues.venue.isOpen}}</li>
+            <li>Checkins: {{venues.venue.checkins}}</li>
+            <li>Tips: {{venues.venue.tips}}</li>
+        </ul>
+        
+        <div class="venue-interactions">
+            <button ng-click="venues.closeModal()">close</button>
+            <a href="http://maps.google.com/?q={{venues.venue.address}}">Map It!</a>
+        </div>
+
         
     </div>
+
 </div>
