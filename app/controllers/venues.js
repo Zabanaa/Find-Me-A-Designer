@@ -1,16 +1,11 @@
 export default class VenuesController {
     
-    constructor(VenuesService, MapsService){
+    constructor(VenuesService){
         this.venues = VenuesService.getVenues()
-        this.mapsService = MapsService
         this.searchLocation = VenuesService.searchLocation
         this.userSearchQuery = VenuesService.userSearchQuery
         this.modalShown = false
-        this.mapElement = document.querySelector(".venue-map")
-    }
-
-    showDetail(venue){
-        console.log(venue)
+        this.venue = null
     }
 
     openModal(venue) {
@@ -30,10 +25,6 @@ export default class VenuesController {
             tips: modalVenue.stats.tipCount,
             latLng: {lat: modalVenue.location.lat, lng: modalVenue.location.lng}
         } 
-
-        // Make call to the google maps api
-        this.mapsService.createMap(this.mapElement, this.venue.latLng)
-
     }
 
     closeModal() {
@@ -44,4 +35,4 @@ export default class VenuesController {
 }
 
 // DO THE NECESSARY INJECTIONS
-VenuesController.$inject = ['VenuesService', 'MapsService']
+VenuesController.$inject = ['VenuesService']
