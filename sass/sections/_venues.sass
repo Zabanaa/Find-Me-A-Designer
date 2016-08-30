@@ -18,11 +18,15 @@
     text-align: left
     overflow-y: scroll
 
-    ul li
-        font-size: 3em
+.venue-link
+    margin-bottom: 1.5rem 
+    cursor: pointer
+    
+    &:hover span
+        text-shadow: 0px 1px 1px $secondary
+
+    span
         font-weight: bold
         font-family: $headings
-        margin-bottom: 1.5rem 
-        
-        
-        
+        font-size: 3em
+        transition: all .1s ease-in-out
