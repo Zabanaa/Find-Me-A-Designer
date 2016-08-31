@@ -16,20 +16,18 @@
     <form class="home__find-designer" ng-submit="home.submitForm()">
        
         <div class="form-group group-location">
-            <label for="location">I'm currently in ...</label>
-            <input name="location" type="text" ng-model="home.location" placeholder="London, UK - Paris,
-            France ...">
+            <label for="location">Show me </label>
+            <input name="location" type="text" ng-model="home.searchQuery">
 
-            <label for="search_query">... And I fancy:</label>
-            <input type="text" name="search_query" ng-model="home.searchQuery" placeholder="Pizza, French, Burgers
-            ...">
+            <label for="search_query">venues in</label>
+            <input type="text" name="search_query" ng-model="home.location">
         </div>
         
         <div class="form-group group-radius">
             <label for="limit">Give me</label>
             <input name="limit" type="text" ng-model="home.limit">
 
-            <label for="radius">results, In a </label>
+            <label for="radius">results, in a </label>
             <input type="text" name="radius" ng-model="home.radius">
 
             <span>metres radius</span>
@@ -37,7 +35,7 @@
 
         <div class="form-group group-budget">
         
-            <label>My budget is</label>
+            <label>My budget is: </label>
             
             <select ng-model="home.price">
                 <option value="1" selected="selected">Low</option>
@@ -46,9 +44,9 @@
                 <option value="4">My boss is paying</option>
             </select>
         
-            <button type="submit">I want to eat!</button>
         </div>
 
+        <button type="submit">I want to eat!</button>
     </form>
 
 </section>
