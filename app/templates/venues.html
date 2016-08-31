@@ -19,10 +19,10 @@
     
     <div class="venue-detail">
         
-
         <h3 class="venue-name">{{venues.venue.name}}</h3>
 
         <ul class="venue-info">
+
             <li>
                 <svg viewBox="0 0 100 125"><g><g><path
                 d="M61.9,68.4c-1.2,0.1-2.3-0.5-3.4-1.1C48.4,61.4,39.8,53,33.8,43c-1.1-1.7-2.1-3.7-1.7-5.7
@@ -161,10 +161,16 @@
             </li>
         </ul>
         <div class="venue-interactions">
-            <button class="close-modal" ng-click="venues.closeModal()">X</button>
             <a class="open-map" target="_blank" href="http://maps.google.com/?q={{venues.venue.address}}">Map It!</a>
         </div>
 
+        <button class="close-modal" ng-click="venues.closeModal()">
+            <svg viewBox="0 0 100 125" enable-background="new 0 0 100 100"><path
+                d="M62.146,49.999L92.364,19.78c1.159-1.159,1.159-3.037,0-4.195l-7.95-7.95c-1.158-1.158-3.036-1.158-4.195,0L50,37.854
+                L19.781,7.635c-1.158-1.158-3.037-1.158-4.196,0l-7.95,7.95c-1.159,1.158-1.159,3.036,0,4.195l30.219,30.219L7.636,80.219
+                c-1.16,1.159-1.16,3.037,0,4.195l7.949,7.95c1.159,1.159,3.038,1.159,4.196,0L50,62.146l30.218,30.218
+                c1.159,1.159,3.037,1.159,4.195,0l7.95-7.95c1.159-1.158,1.159-3.036,0-4.195L62.146,49.999z"/></svg>
+        </button>
         
     </div>
 
