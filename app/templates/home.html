@@ -17,25 +17,27 @@
        
         <div class="form-group group-location">
             <label for="location">Show me </label>
-            <input name="location" type="text" ng-model="home.searchQuery">
+            <input name="search_query" type="text" ng-model="home.searchQuery"
+            placeholder="Burgers, Pizza, Italian ...">
 
             <label for="search_query">venues in</label>
-            <input type="text" name="search_query" ng-model="home.location">
+            <input type="text" name="location" ng-model="home.location"
+            placeholder="London, UK - New York City ...">
         </div>
         
         <div class="form-group group-radius">
             <label for="limit">Give me</label>
-            <input name="limit" type="text" ng-model="home.limit">
+            <input name="limit" type="text" ng-model="home.limit" placeholder="10 (max 50)"> 
 
             <label for="radius">results, in a </label>
-            <input type="text" name="radius" ng-model="home.radius">
+            <input type="text" name="radius" ng-model="home.radius" placeholder="8000 (max 10000)")>
 
             <span>metres radius</span>
         </div>
 
         <div class="form-group group-budget">
         
-            <label>My budget is: </label>
+            <label>My budget is </label>
             
             <select ng-model="home.price">
                 <option value="1" selected="selected">Low</option>
@@ -46,7 +48,7 @@
         
         </div>
 
-        <button type="submit">I want to eat!</button>
+        <button class="home-submit" type="submit">I want to eat!</button>
     </form>
 
 </section>

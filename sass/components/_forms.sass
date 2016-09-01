@@ -2,18 +2,50 @@
     width: 100%
     padding: 0 10em
     text-align: left
+    color: $primary 
 
 .form-group
     
     font-size: 1.79em
     margin-bottom: 1.5em
-
-    label
-        margin-bottom: .5em
     
     input
         background: none
         border: none
-        border-bottom: 2px solid darken($tertiary, 5%)
         outline: 0
         font-size: 1em
+        color: $primary
+
+        +placeholder
+           color: fade-out($primary, .34) 
+           font-size: .78em 
+           text-align: center
+
+
+    select
+        background: transparent
+        border: none
+        font-size: .8em
+        color: fade-out($primary, .34)
+        cursor: pointer
+        outline: 0
+
+.home-submit
+
+    display: block
+    margin: 0 auto
+    background: $primary
+    border: none
+    font-size: 1.3em
+    padding: 1em 1.5em
+    outline: 0
+    cursor: pointer
+    border-radius: 5px
+    color: $tertiary
+    transition: all .3s ease
+
+    &:hover
+        background: $secondary
+        color: $quarternary
+
+
