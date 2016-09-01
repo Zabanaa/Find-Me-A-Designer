@@ -1,16 +1,12 @@
 export default class HomeController {
     
-    // Pass any dependencies to the constructor
     constructor(VenuesService, $location) {
-        this.name = "Neymar Jr"
-        this.venues = VenuesService
         this.$location = $location
     }
     
     submitForm() {
         
         let formData = {
-            
             query : this.searchQuery,
             radius : this.radius,
             limit : this.limit,
@@ -18,13 +14,13 @@ export default class HomeController {
             price: this.price
         }
        
-        this.venues.setLocation(formData.location)
-        this.venues.setUserSearchQuery(formData.query)
+        VenuesService.setLocation(formData.location)
+        VenuesService.setUserSearchQuery(formData.query)
 
-        this.venues.fetchVenues(formData)
+        VenuesService.fetchVenues(formData)
             .then( 
                 (response) => {
-                    this.venues.setVenues(response.data)
+                    VenuesService.setVenues(response.data)
                     this.$location.path('/venues')
                 },
                 (error) => console.log(error) 
