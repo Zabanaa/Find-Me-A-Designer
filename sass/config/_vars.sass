@@ -13,3 +13,14 @@ $quarternary: #F8EEE7
 $headings: 'Montserrat', sans-serif
 $content: 'Open Sans', sans-serif
 
+// MIXINS 
+
+=placeholder
+    &::-webkit-input-placeholder
+      @content
+    &:-moz-placeholder
+      @content
+    &::-moz-placeholder
+      @content
+    &:-ms-input-placeholder
+      @content
