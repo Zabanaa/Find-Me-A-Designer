@@ -2,6 +2,7 @@ export default class HomeController {
     
     constructor(VenuesService, $location) {
         this.$location = $location
+        this.venues = VenuesService
     }
     
     submitForm() {
@@ -14,13 +15,13 @@ export default class HomeController {
             price: this.price
         }
        
-        VenuesService.setLocation(formData.location)
-        VenuesService.setUserSearchQuery(formData.query)
+        this.venues.setLocation(formData.location)
+        this.venues.setUserSearchQuery(formData.query)
 
-        VenuesService.fetchVenues(formData)
+        this.venues.fetchVenues(formData)
             .then( 
                 (response) => {
-                    VenuesService.setVenues(response.data)
+                    this.venues.setVenues(response.data)
                     this.$location.path('/venues')
                 },
                 (error) => console.log(error) 
