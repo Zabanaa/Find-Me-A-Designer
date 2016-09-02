@@ -1,8 +1,7 @@
 .home__find-designer
-    width: 100%
     padding: 0 10em
     text-align: left
-    color: $primary 
+    color: darken($secondary, 18%)
 
 .form-group
     
@@ -15,10 +14,17 @@
         outline: 0
         font-size: 1em
         color: $primary
+        
+        &[name="search_query"]
+            width: 250px
+        &[name="limit"]
+            width: 125px
+        &[name="radius"]
+            width: 200px
 
         +placeholder
            color: fade-out($primary, .34) 
-           font-size: .78em 
+           font-size: .7em 
            text-align: center
 
 
@@ -41,11 +47,11 @@
     outline: 0
     cursor: pointer
     border-radius: 5px
-    color: $tertiary
+    color: $quarternary
     transition: all .3s ease
 
     &:hover
-        background: $secondary
+        background: $tertiary
         color: $quarternary
 
 
