@@ -1,7 +1,29 @@
 .venues__top
     background: $primary
     padding: 2em 0
-    color: $quarternary
+    color:  $quarternary
+    position: fixed
+    width: 100%
+
+.venues__back
+    background: none
+    border: none 
+    outline: 0
+    position: absolute
+    top: 50%
+    left: 30px
+    transform: translateY(-50%) 
+    cursor: pointer
+    transition: transform .2s ease
+
+    &:hover
+        transform: translateY(-50%) scale(1.3)
+   
+.venues__back svg
+    +size(60px)
+    
+    path
+        fill: $quarternary
 
 .venues__title
     text-transform: capitalize
@@ -13,7 +35,7 @@
 .venues__list
     background: $quarternary
     flex-grow: 1
-    padding: 2em 
+    padding: 2em
     text-align: left
     overflow-y: scroll
 
