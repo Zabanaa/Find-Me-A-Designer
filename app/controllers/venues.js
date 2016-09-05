@@ -1,6 +1,7 @@
 export default class VenuesController {
     
-    constructor(VenuesService){
+    constructor(VenuesService, $location){
+        this.location = $location
         this.venues = VenuesService.getVenues()
         this.searchLocation = VenuesService.searchLocation
         this.userSearchQuery = VenuesService.userSearchQuery
@@ -14,17 +15,22 @@ export default class VenuesController {
         this.venue = {
             name: modalVenue.name,
             phone: modalVenue.contact.formattedPhone,
-            twitter: modalVenue.contact.twitter,
+            twitter: '@' + modalVenue.contact.twitter,
             url: modalVenue.url, 
-            address: modalVenue.location.formattedAddress.join(),
+            address: modalVenue.location.formattedAddress.join().replace(/\s/g, "+"),
             rating: modalVenue.rating,
             ratingColor: modalVenue.ratingColor,
-            isOpen: modalVenue.hours.isOpen ? 'Open' : 'Closed',
+            isOpen: modalVenue.hours ? modalVenue.hours.isOpen : 'Info Not Provided',
             hereNow: modalVenue.hereNow.count,
             checkins: modalVenue.stats.checkinsCount,
             tips: modalVenue.stats.tipCount,
             latLng: {lat: modalVenue.location.lat, lng: modalVenue.location.lng}
         } 
+    }
+
+
+    goBack() {
+        this.location.path('/') 
     }
 
     closeModal() {
@@ -35,4 +41,4 @@ export default class VenuesController {
 }
 
 // DO THE NECESSARY INJECTIONS
-VenuesController.$inject = ['VenuesService']
+VenuesController.$inject = ['VenuesService', '$location']
