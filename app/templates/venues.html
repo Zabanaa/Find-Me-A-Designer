@@ -79,8 +79,8 @@
                     marker="none" visibility="visible" display="inline"
                     overflow="visible"/></svg>
                 <a
-                    href="http://twitter.com/{{venues.venue.twitter}}">{{venues.venue.twitter
-                ? venues.venue.twitter : 'Info not provided'}}</a>
+                    ng-show="venues.venue.twitter"
+                    href="http://twitter.com/{{venues.venue.twitter}}">{{venues.venue.twitter}}</a>
             </li>
 
             <li>
