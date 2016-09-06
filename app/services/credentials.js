@@ -1,0 +1,6 @@
+const credentials = {
+    clientId: 'Y5IGDTNYOSPCOOXGSHBC0XGALFKBNO0MSZFA1QSXP3LKILG5',
+    clientSecret: '3RCSCB0GEVZX3CERI2DC4I1LU5G41ZPXFB2BUFPHWHVWBJRB'
+}
+
+export default credentials
