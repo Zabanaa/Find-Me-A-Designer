@@ -7,6 +7,8 @@ export default class VenuesController {
         this.userSearchQuery = VenuesService.userSearchQuery
         this.modalShown = false
         this.venue = null
+        this.callMade = VenuesService.callMade
+        if (!this.callMade) this.location.path('/')
     }
 
     openModal(venue) {
@@ -15,7 +17,7 @@ export default class VenuesController {
         this.venue = {
             name: modalVenue.name,
             phone: modalVenue.contact.formattedPhone,
-            twitter: '@' + modalVenue.contact.twitter,
+            twitter: modalVenue.contact.twitter ? '@' + modalVenue.contact.twitter : false,
             url: modalVenue.url, 
             address: modalVenue.location.formattedAddress.join().replace(/\s/g, "+"),
             rating: modalVenue.rating,
