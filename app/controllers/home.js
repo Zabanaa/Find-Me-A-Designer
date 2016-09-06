@@ -22,6 +22,7 @@ export default class HomeController {
             .then( 
                 (response) => {
                     this.venues.setVenues(response.data)
+                    this.venues.callMade = true
                     this.$location.path('/venues')
                 },
                 (error) => console.log(error) 
