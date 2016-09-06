@@ -1,14 +1,20 @@
+import credentials from './credentials'
+
+let clientId = credentials.clientId
+let clientSecret = credentials.clientSecret
+
 export default class VenuesService {
     
     constructor($http){
         this.get = $http.get
         this.endpoint = 'https://api.foursquare.com/v2/venues/explore?'
-        this.clientId = 'Y5IGDTNYOSPCOOXGSHBC0XGALFKBNO0MSZFA1QSXP3LKILG5'
-        this.clientSecret = '3RCSCB0GEVZX3CERI2DC4I1LU5G41ZPXFB2BUFPHWHVWBJRB'
+        this.clientId = clientId 
+        this.clientSecret = clientSecret 
         this.version = "20160820"
         this.venues = {}
         this.searchLocation = null
         this.userSearchQuery = null
+        this.callMade = false
     }
     
     fetchVenues(params){
