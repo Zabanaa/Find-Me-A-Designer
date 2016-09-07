@@ -11,24 +11,24 @@
 
 <section class="home__bottom">
 
-    <form class="home__find-designer" ng-submit="home.submitForm()">
+    <form novalidate autocomplete="off" class="home__find-designer" name="homeForm" ng-submit="home.submitForm()">
        
         <div class="form-group group-location">
             <label for="location">Show me </label>
-            <input name="search_query" type="text" ng-model="home.searchQuery"
+            <input ng-pattern="/^[a-zA-Z\s-]*$/" ng-required="true" name="search_query" type="text" ng-model="home.searchQuery"
             placeholder="Burgers, Pizza, Italian ...">
 
             <label for="search_query">venues in</label>
-            <input type="text" name="location" ng-model="home.location"
+            <input ng-pattern="/^[a-zA-Z\s,-]*$/" ng-required="true" type="text" name="location" ng-model="home.location"
             placeholder="London, UK - New York City ...">
         </div>
         
         <div class="form-group group-radius">
             <label for="limit">Give me</label>
-            <input name="limit" type="text" ng-model="home.limit" placeholder="10 (max 50)"> 
+            <input ng-required="true" min="10" max="50" name="limit" type="number" ng-model="home.limit" placeholder="10 (max 50)"> 
 
             <label for="radius">results, in a </label>
-            <input type="text" name="radius" ng-model="home.radius" placeholder="8000 (max 10000)")>
+            <input ng-required="true" min="1000" max="10000" type="number" name="radius" ng-model="home.radius" placeholder="8000 (max 10000)")>
 
             <span>metres radius</span>
         </div>
@@ -37,7 +37,7 @@
         
             <label>My budget is </label>
             
-            <select ng-model="home.price">
+            <select ng-required="true" name="budget" ng-model="home.price">
                 <option value="1" selected="selected">Low</option>
                 <option value="2">Moderate</option>
                 <option value="3">Big</option>
@@ -46,7 +46,19 @@
         
         </div>
 
-        <button class="home-submit" type="submit">I want to eat!</button>
+        <button class="home-submit" type="submit" ng-disabled="homeForm.$invalid">I want to eat!</button>
     </form>
+    
+    <div class="home__form-errors">
+    
+        <span ng-show="homeForm.search_query.$error.pattern">Looks like an invalid query</span>
+        <span ng-show="homeForm.budget.$error.required">Please specify a budget</span>
+        <span ng-show="homeForm.limit.$error.max ||  homeForm.limit.$error.min">Please
+            provide a valid results range (10 - 50)</span>
+        <span ng-show="homeForm.radius.$error.max || homeForm.radius.$error.min">Please
+            provide a valid radius range (1000 - 10000)</span>
+        <span ng-show="homeForm.location.$error.pattern">Location can only contain letters and
+        spaces</span>
+    </div>
 
 </section>
