@@ -15,10 +15,13 @@
         font-size: 1em
         color: $primary
         
+        &[type="number"]
+            appearance: none
+
         &[name="search_query"]
             width: 250px
         &[name="limit"]
-            width: 125px
+            width: 135px
         &[name="radius"]
             width: 200px
 
@@ -49,6 +52,11 @@
     border-radius: 5px
     color: $quarternary
     transition: all .3s ease
+    
+    &:disabled
+        background-color: darken(#eee, 19%)
+        pointer-events: none
+
 
     &:hover
         background: $tertiary
