@@ -1,8 +1,8 @@
-const routing = ($stateProvider, $urlRouterProvider) => {
+const routing = ($stateProvider, $urlRouterProvider, $locationProvider) => {
 
     $urlRouterProvider.otherwise("/")
     
-    $urlRouterProvider.html5mode(true)
+    $locationProvider.html5mode(true)
     
     $stateProvider
         .state('home', {
@@ -20,6 +20,6 @@ const routing = ($stateProvider, $urlRouterProvider) => {
         })
 }
 
-routing.$inject = ['$stateProvider', '$urlRouterProvider']
+routing.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
 
 export default routing
