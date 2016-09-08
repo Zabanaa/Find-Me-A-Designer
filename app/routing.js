@@ -1,10 +1,9 @@
 const routing = ($stateProvider, $urlRouterProvider) => {
 
-    // TODO set html5 mode on
-
-    // ADD YOUR ROUTES HERE BRUV
     $urlRouterProvider.otherwise("/")
-
+    
+    $urlRouterProvider.html5mode(true)
+    
     $stateProvider
         .state('home', {
             url: '/',
