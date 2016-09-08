@@ -9,15 +9,11 @@
     margin-bottom: 1.5em
     
     input
-        background: none
-        border: none
-        outline: 0
         font-size: 1em
         color: $primary
         
         &[type="number"]
             appearance: none
-
         &[name="search_query"]
             width: 250px
         &[name="limit"]
@@ -30,25 +26,15 @@
            font-size: .7em 
            text-align: center
 
-
     select
-        background: transparent
-        border: none
-        font-size: .8em
         color: fade-out($primary, .34)
-        cursor: pointer
-        outline: 0
 
 .home-submit
 
-    display: block
     margin: 0 auto
     background: $primary
-    border: none
     font-size: 1.3em
     padding: 1em 1.5em
-    outline: 0
-    cursor: pointer
     border-radius: 5px
     color: $quarternary
     transition: all .3s ease
@@ -56,7 +42,6 @@
     &:disabled
         background-color: darken(#eee, 19%)
         pointer-events: none
-
 
     &:hover
         background: $tertiary
