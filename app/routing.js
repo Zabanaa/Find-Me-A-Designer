@@ -1,9 +1,7 @@
 const routing = ($stateProvider, $urlRouterProvider, $locationProvider) => {
 
+    $locationProvider.html5Mode(true)
     $urlRouterProvider.otherwise("/")
-    
-    $locationProvider.html5mode(true)
-    
     $stateProvider
         .state('home', {
             url: '/',
