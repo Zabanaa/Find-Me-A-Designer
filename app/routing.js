@@ -5,14 +5,14 @@ const routing = ($stateProvider, $urlRouterProvider, $locationProvider) => {
     $stateProvider
         .state('home', {
             url: '/',
-            templateUrl: '/app/templates/home.html',
+            templateUrl: 'app/templates/home.html',
             controller: 'HomeController',
             controllerAs: 'home'
         })
 
         .state('results', {
             url: '/venues',
-            templateUrl: '/app/templates/venues.html',
+            templateUrl: 'app/templates/venues.html',
             controller: 'VenuesController',
             controllerAs: 'venues'
         })
