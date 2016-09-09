@@ -33,26 +33,12 @@
             <span>metres radius</span>
         </div>
 
-        <div class="form-group group-budget">
-        
-            <label>My budget is </label>
-            
-            <select ng-required="true" name="budget" ng-model="home.price">
-                <option selected value="1">Low</option>
-                <option value="2">Moderate</option>
-                <option value="3">Big</option>
-                <option value="4">My boss is paying</option>
-            </select>
-        
-        </div>
-
         <button class="home-submit" type="submit" ng-disabled="homeForm.$invalid">I want to eat!</button>
     </form>
     
     <div class="home__form-errors">
     
         <span ng-show="homeForm.search_query.$error.pattern">Looks like an invalid query</span>
-        <span ng-show="homeForm.budget.$error.required">Please specify a budget</span>
         <span ng-show="homeForm.limit.$error.max ||  homeForm.limit.$error.min">Please
             provide a valid results range (10 - 50)</span>
         <span ng-show="homeForm.radius.$error.max || homeForm.radius.$error.min">Please
