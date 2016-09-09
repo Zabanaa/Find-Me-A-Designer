@@ -12,7 +12,6 @@ export default class HomeController {
             radius : this.radius,
             limit : this.limit,
             location: this.location,
-            price: this.price
         }
        
         this.venues.setLocation(formData.location)

@@ -18,7 +18,7 @@ export default class VenuesService {
     }
     
     fetchVenues(params){
-        return this.get(this.endpoint + 'near=' + params.location + '&query='+ params.query + '&price=' + params.price +'&limit=' + params.limit+ '&radius='+ params.radius +'&client_id=' + this.clientId + '&client_secret=' + this.clientSecret + '&v=' + this.version) 
+        return this.get(this.endpoint + 'near=' + params.location + '&query='+ params.query + '&price=2' + '&limit=' + params.limit+ '&radius='+ params.radius +'&client_id=' + this.clientId + '&client_secret=' + this.clientSecret + '&v=' + this.version) 
     }
     
     getVenues(){
